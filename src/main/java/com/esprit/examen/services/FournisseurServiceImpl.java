@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/*package com.esprit.examen.services;
 
 import java.util.Date;
 import java.util.List;
@@ -39,7 +39,7 @@ public class FournisseurServiceImpl implements IFournisseurService {
 	}
 
 
-	public Fournisseur addFournisseur(Fournisseur f /*Master*/) {
+	public Fournisseur addFournisseur(Fournisseur f) {
 		DetailFournisseur df= new DetailFournisseur();//Slave
 		df.setDateDebutCollaboration(new Date()); //util
 		//On affecte le "Slave" au "Master"
@@ -86,4 +86,4 @@ public class FournisseurServiceImpl implements IFournisseurService {
 
 	
 
-}
+}*/
