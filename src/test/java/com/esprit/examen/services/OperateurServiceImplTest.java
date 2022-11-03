@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/* package com.esprit.examen.services;
 
 import com.esprit.examen.entities.Operateur;
 import java.text.ParseException;
@@ -35,7 +35,7 @@ public class OperateurServiceImplTest {
 
          List<Operateur> Operateurs = operateurService.retrieveAllOperateurs();
          l.info("Les  Operateurs : " + Operateurs);
-      }
+      }*/
        
        
    //@Test
@@ -70,4 +70,4 @@ public class OperateurServiceImplTest {
 
       // l.info("size2 "+Produits1.size());
   // }
-}
+//}
