@@ -7,21 +7,20 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import static org.junit.Assert.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
+@Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ProduitServiceImplTest {
     @Autowired
        IProduitService produitService;
-       private static final Logger l = LogManager.getLogger(ProduitServiceImpl.class);
 
        @Test
        public void testRetrieveAllProduit() throws ParseException {
@@ -32,14 +31,14 @@ public class ProduitServiceImplTest {
          Date date12 = dateFormat.parse("30/09/2010");
          Produit sa = new Produit(date11, date12);
          Produit savedProduit = produitService.addProduit(sa);
-         l.info(" Produit : " + sa);
+         log.info(" Produit : " + sa);
 
          assertNotNull(sa.getIdProduit());
 
          produitService.retrieveProduit(sa.getIdProduit());
 
          List<Produit> Produits = produitService.retrieveAllProduits();
-         l.info("Les  Produits : " + Produits);
+         log.info("Les  Produits : " + Produits);
       }
    @Test
    public void testDeleteProduit() throws ParseException {
@@ -49,9 +48,9 @@ public class ProduitServiceImplTest {
          Long idFour=(long) 2;
          //assertEquals(expected + 1, produitService.retrieveAllProduits().size());
       System.out.print("size "+Produits.size());
-         l.info(" count" + Produits.size());
+         log.info(" count" + Produits.size());
       produitService.deleteProduit(1L);
-      l.info("size2 "+produitService.retrieveAllProduits().size());
+      log.info("size2 "+produitService.retrieveAllProduits().size());
 
 
    }
@@ -62,14 +61,14 @@ public class ProduitServiceImplTest {
       Date date1 = dateFormat.parse("10/02/2020");
       Date date2 = dateFormat.parse("12/09/2022");
       Produit p = new Produit(date1, date2);
-      l.info("produit \n "+p);
+      log.info("produit \n "+p);
 
       Produit savedProduit= produitService.addProduit(p);
-      l.info("size1 "+Produits.size());
+      log.info("size1 "+Produits.size());
       System.out.print("size1 "+Produits.size());
       produitService.deleteProduit(savedProduit.getIdProduit());
       List<Produit> Produits1 = produitService.retrieveAllProduits();
 
-      l.info("size2 "+Produits1.size());
+      log.info("size2 "+Produits1.size());
    }
 }
