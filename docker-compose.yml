@@ -1,6 +1,7 @@
-version: "3.8"
+version: "3.3"
 
 services:
+
   mysqldb:
     image: mysql:5.7
     restart: unless-stopped
@@ -15,7 +16,8 @@ services:
   app:
     depends_on:
       - mysqldb
-    build: ./spring-app
+    image: mohamedbouslah/spring:latest
+    container_name: springboot-app
     restart: on-failure
     env_file: ./.env
     ports:
