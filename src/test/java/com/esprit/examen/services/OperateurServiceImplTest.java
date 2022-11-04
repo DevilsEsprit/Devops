@@ -38,36 +38,34 @@ public class OperateurServiceImplTest {
        }
        
        
-   //@Test
-  // public void testDeleteProduit() throws ParseException {
+       @Test
+       public void testDeleteOperateur() throws ParseException {
 
-      // List<Produit> Produits = produitService.retrieveAllProduits();
-       //  int expected = Produits.size();
-       //  Long idFour=(long) 2;
-         //assertEquals(expected + 1, produitService.retrieveAllProduits().size());
-     //  System.out.print("size "+Produits.size());
-       //  l.info(" count" + Produits.size());
-      // produitService.deleteProduit(1L);
-    //  l.info("size2 "+produitService.retrieveAllProduits().size());
+    	   /* List<Operateur> Operateurs = operateurService.retrieveAllOperateurs();
+    	   int expected = Operateurs.size();
+    	   Long idFour=(long) 2;
+    	   assertEquals(expected + 1, operateurService.retrieveAllOperateurs().size());
+    	   System.out.print("size "+Operateurs.size());
+    	   l.info(" count" + Operateurs.size());
+    	   operateurService.deleteOperateur(1L);
+    	   l.info("size2 "+operateurService.retrieveAllOperateurs().size());*/
 
-  // }
+       }
    
    
-  // @Test
-   // public void testAddProduit() throws ParseException{
-     // List<Produit> Produits = produitService.retrieveAllProduits();
-     // SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-      // Date date1 = dateFormat.parse("10/02/2020");
-      // Date date2 = dateFormat.parse("12/09/2022");
-      //Produit p = new Produit(date1, date2);
-      // l.info("produit \n "+p);
+       @Test
+       public void testAddOperateur() throws ParseException{
+    	   
+    	   List<Operateur> Operateurs = operateurService.retrieveAllOperateurs();
+    	   Operateur op = new Operateur("testnom2","testprenom2","testpassword2");
+    	   l.info("operateur \n "+op);
 
-     // Produit savedProduit= produitService.addProduit(p);
-      // l.info("size1 "+Produits.size());
-      // System.out.print("size1 "+Produits.size());
-      // produitService.deleteProduit(savedProduit.getIdProduit());
-      // List<Produit> Produits1 = produitService.retrieveAllProduits();
+    	   Operateur savedOperateur= operateurService.addOperateur(op);
+    	   l.info("size1 "+Operateurs.size());
+    	   System.out.print("size1 "+Operateurs.size());
+    	   operateurService.deleteOperateur(savedOperateur.getIdOperateur());
+    	   List<Operateur> Operateurs1 = operateurService.retrieveAllOperateurs();
 
-      // l.info("size2 "+Produits1.size());
-  // }
+    	   l.info("size2 "+Operateurs1.size());
+       }
 }
