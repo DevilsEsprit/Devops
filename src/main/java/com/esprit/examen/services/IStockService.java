@@ -14,4 +14,6 @@ public interface IStockService {
 	Stock updateStock(Stock u);
 
 	Stock retrieveStock(Long id);
+
+	String retrieveStatusStock();
 }
