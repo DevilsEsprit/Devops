@@ -16,7 +16,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: firaskhadraoui/cloudonomicsspring-app:latest
+    image: firaskhadraoui/cloudonomicsspring-app
     container_name: springboot-app
     restart: on-failure
     env_file: ./.env
