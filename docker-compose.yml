@@ -3,7 +3,7 @@ version: "3.3"
 services:
   angular-app:
     #The docker file in FE, builds and provides the docker image.
-    image: mohamedbouslah/angular
+    image: mohamedbouslah/angular:latest
     ports:
       - 4200:4200 #Forwars the exposed port 4200 on the container to port 4200 on the host machine
   mysqldb:
@@ -20,7 +20,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: devops1
+    image: mohamedbouslah/spring:latest
     container_name: springboot-app
     restart: on-failure
     env_file: ./.env
