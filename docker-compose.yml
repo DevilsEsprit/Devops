@@ -1,7 +1,12 @@
 version: "3.3"
 
 services:
-
+  angular-app:
+    image: firaskhadraoui/angular-app:latest
+    ports:
+      - 4200:4200
+    depends_on:
+      - app
   mysqldb:
     image: mysql:latest
     restart: unless-stopped
